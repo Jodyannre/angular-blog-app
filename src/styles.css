@@ -38,3 +38,17 @@ body {
     background-color: var(--primary-color);
     color: white;
 }
+
+.btn-theme {
+    height: 58px;
+    border: none;
+    font-size: 13px;
+    background-color: var(--primary-color);
+    color:white
+}
+
+
+
+input[type=text], input[type=email], input[type=password] {
+    width: 100%;
+}
