@@ -10,11 +10,17 @@
                         type="text"
                         class="form-control shadow-effect"
                         placeholder="Add new  category"
+                        #newCateogry='ngModel'
+                        required
                         ngModel
+                        [ngClass] = "{ 'is-invalid': newCateogry.invalid && newCateogry.touched} "
                     />
+                    <div class="alert alert-danger" *ngIf="newCateogry.invalid && newCateogry.touched">
+                        Category is required
+                    </div>
                 </div>
                 <div class="form-group col-md-2 d-inline-block">
-                    <button class="btn btn-block btn-info mb-2 btn-theme">Add category</button>
+                    <button class="btn btn-block btn-info mb-2 btn-theme" [disabled]="newCateogry.invalid">Add category</button>
                 </div>
             </form>
         </div>

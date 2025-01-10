@@ -1,11 +1,13 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-import { Firestore, collectionData, collection, addDoc } from '@angular/fire/firestore';
+import { NgClass } from '@angular/common';
+import { NgIf } from '@angular/common';
+import { Firestore, collectionData, collection, addDoc, getDoc, query, setDoc, where, getDocs, doc } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-categories',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, NgClass, NgIf],
   templateUrl: './categories.component.html',
   styleUrl: './categories.component.css'
 })
@@ -18,7 +20,6 @@ export class CategoriesComponent {
     }
     const newCollection = collection(this.firestore, 'categories');
     const docRef = await addDoc(newCollection, categoryData)
-    //#delete
     console.log('Document written with ID: ', docRef.id);
   }
 }
